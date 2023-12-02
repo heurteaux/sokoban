@@ -6,8 +6,8 @@
 */
 
 #include <ncurses.h>
-#include "../includes/internal_functions.h"
-#include "../includes/player_pos.h"
+#include "../../includes/internal_functions.h"
+#include "../../includes/player_pos.h"
 
 static bool is_base_on_pos(int y, int x, position_t **O_pos_arr)
 {

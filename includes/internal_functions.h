@@ -10,6 +10,7 @@
 #include <stdbool.h>
 #include "../includes/player_pos.h"
 #include "../includes/position.h"
+#include "../includes/map.h"
 
 bool is_help_menu_requested(int argc, char **argv);
 
@@ -30,3 +31,7 @@ bool is_case_transparent(char **map, int y, int x);
 bool is_case_box(char **map, int y, int x);
 
 position_t **get_o_pos_arr(char **map);
+
+bool is_win(char **map, position_t **o_pos_arr);
+
+void print_map(map_t map);

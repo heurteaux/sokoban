@@ -11,6 +11,7 @@
 #include "../includes/file_reading.h"
 #include "../includes/internal_functions.h"
 #include "../includes/map_infos.h"
+#include "../includes/position.h"
 
 static char **alloc_2d_arr(int height, int width)
 {
@@ -67,14 +68,14 @@ void start_sokoban(char **argv)
 {
     map_t map = init_map(argv[1]);
     int key = 0;
-    bool O_undr_playr = false;
+    position_t **O_pos_arr = get_o_pos_arr(map.content);
 
     setup_term();
     while (key != 27) {
         display_map(map.content);
         refresh();
         key = getch();
-        handle_controls(map.content, key, &O_undr_playr);
+        handle_controls(map.content, key, O_pos_arr);
         clear();
     }
     endwin();

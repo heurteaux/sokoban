@@ -8,6 +8,7 @@
 #include <ncurses.h>
 #include <stdlib.h>
 #include "../includes/map.h"
+#include "../includes/my.h"
 #include "../includes/file_reading.h"
 #include "../includes/internal_functions.h"
 #include "../includes/map_infos.h"
@@ -57,10 +58,20 @@ map_t init_map(char *map_path)
     return map;
 }
 
-void display_map(char **map)
+void display_map(map_t *map)
 {
-    for (int i = 0; map[i] != NULL; i++) {
-        mvprintw(i, 0, "%s", map[i]);
+    int max_x;
+    int max_y;
+    char *extend_msg = "Terminal window too small, please extend.";
+
+    getmaxyx(stdscr, max_x, max_y);
+    if (max_x < map->width || max_y < map->height) {
+        mvprintw(max_x / 2, (max_y / 2) - my_strlen(extend_msg) / 2, "%s\n",
+            extend_msg);
+    } else {
+        for (int i = 0; map->content[i] != NULL; i++) {
+            mvprintw(i, 0, "%s", map->content[i]);
+        }
     }
 }
 
@@ -72,7 +83,7 @@ void start_sokoban(char **argv)
 
     setup_term();
     while (key != 27 && !is_win(map.content, o_pos_arr)) {
-        display_map(map.content);
+        display_map(&map);
         key = getch();
         handle_controls(&map, key, o_pos_arr, argv[1]);
         refresh();

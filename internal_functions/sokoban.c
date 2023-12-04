@@ -50,6 +50,7 @@ map_t init_map(char *map_path)
     char *file_content = get_file_content(map_path);
     map_t map;
 
+    check_map_format(file_content);
     map.width = get_map_width(file_content);
     map.height = get_map_height(file_content);
     map.content = get_map(file_content, map.height, map.width);
@@ -73,10 +74,9 @@ void start_sokoban(char **argv)
     while (key != 27 && !is_win(map.content, o_pos_arr)) {
         display_map(map.content);
         key = getch();
-        handle_controls(map.content, key, o_pos_arr);
+        handle_controls(&map, key, o_pos_arr, argv[1]);
         refresh();
         clear();
     }
     endwin();
-    print_map(map);
 }

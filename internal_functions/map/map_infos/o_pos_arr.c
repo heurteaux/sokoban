@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../includes/position.h"
+#include "../../../includes/position.h"
 
 static void get_nb_pos_inner_cond(char **map, int y, int x, int *count)
 {

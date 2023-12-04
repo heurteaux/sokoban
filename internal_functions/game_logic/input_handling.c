@@ -24,11 +24,11 @@ static bool is_box_move_y(char **map, int distance)
 
     return (is_case_box(map, player_pos.y + distance, player_pos.x)
         && !is_case_solid(
-        map, player_pos.y + (distance + distance), player_pos.x)
+            map, player_pos.y + (distance + distance), player_pos.x)
         && !is_case_solid(map, player_pos.y + distance, player_pos.x)
         && !is_case_box(map,
-        player_pos.y + (distance + (distance < 0 ? -1 : 1)),
-        player_pos.x));
+            player_pos.y + (distance + (distance < 0 ? -1 : 1)),
+            player_pos.x));
 }
 
 static bool is_box_move_x(char **map, int distance)
@@ -37,10 +37,10 @@ static bool is_box_move_x(char **map, int distance)
 
     return (is_case_box(map, player_pos.y, player_pos.x + distance)
         && !is_case_solid(
-        map, player_pos.y, player_pos.x + (distance + distance))
+            map, player_pos.y, player_pos.x + (distance + distance))
         && !is_case_solid(map, player_pos.y, player_pos.x + distance)
-        && !is_case_box(map,
-        player_pos.y, player_pos.x + (distance + (distance < 0 ? -1 : 1))));
+        && !is_case_box(map, player_pos.y,
+            player_pos.x + (distance + (distance < 0 ? -1 : 1))));
 }
 
 void mv_player_y(char **map, int distance, position_t **O_pos_arr)
@@ -73,8 +73,7 @@ void mv_player_x(char **map, int distance, position_t **O_pos_arr)
         offset = (distance < 0 ? -1 : 1);
         map[player_pos.y][player_pos.x] = ' ';
         map[player_pos.y][player_pos.x + distance] = 'P';
-        map[player_pos.y]
-        [player_pos.x + (distance + offset)] = 'X';
+        map[player_pos.y][player_pos.x + (distance + offset)] = 'X';
     }
     if (!is_case_solid(map, player_pos.y, player_pos.x + distance)
         && !is_case_box(map, player_pos.y, player_pos.x + distance)) {
@@ -85,21 +84,29 @@ void mv_player_x(char **map, int distance, position_t **O_pos_arr)
     }
 }
 
-void handle_controls(char **map, int key, position_t **O_pos_arr)
+void reset_game(map_t *map, char *map_path)
+{
+    *map = init_map(map_path);
+}
+
+void handle_controls(
+    map_t *map, int key, position_t **O_pos_arr, char *map_path)
 {
     switch (key) {
         case KEY_UP:
-            mv_player_y(map, -1, O_pos_arr);
+            mv_player_y(map->content, -1, O_pos_arr);
             break;
         case KEY_DOWN:
-            mv_player_y(map, 1, O_pos_arr);
+            mv_player_y(map->content, 1, O_pos_arr);
             break;
         case KEY_RIGHT:
-            mv_player_x(map, 1, O_pos_arr);
+            mv_player_x(map->content, 1, O_pos_arr);
             break;
         case KEY_LEFT:
-            mv_player_x(map, -1, O_pos_arr);
+            mv_player_x(map->content, -1, O_pos_arr);
             break;
+        case ' ':
+            reset_game(map, map_path);
         default:
             break;
     }

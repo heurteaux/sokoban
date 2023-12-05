@@ -97,11 +97,11 @@ void my_print_revalpha(void);
 
 char *my_strncpy(char *dest, char const *src, int nb);
 
-void
-for_positive_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_positive_b(
+    long nb, int arg_length, long result_holder, char *base_str);
 
-void
-for_negative_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_negative_b(
+    long nb, int arg_length, long result_holder, char *base_str);
 
 int my_put_nbr_base(int nb, char *base_str);
 

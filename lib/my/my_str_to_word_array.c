@@ -21,7 +21,7 @@ int count_words(char const *str)
 {
     int word_count = 0;
 
-    for (int i = 0; str[i] != '\0' ; i++) {
+    for (int i = 0; str[i] != '\0'; i++) {
         if (is_alphanum(str[i]) == 1 && (!is_alphanum(str[i - 1])) == 1) {
             word_count++;
         }
@@ -33,7 +33,7 @@ int get_word_len(char const *str)
 {
     int char_count = 0;
 
-    for (int i = 0 ; is_alphanum(str[i]) == 1; i++) {
+    for (int i = 0; is_alphanum(str[i]) == 1; i++) {
         char_count++;
     }
     return char_count;
@@ -44,7 +44,7 @@ char *get_word(char const *str)
     int len = get_word_len(str);
     char *result = malloc(sizeof(char) * (len + 1));
 
-    for (int i = 0 ; i < len ; i++) {
+    for (int i = 0; i < len; i++) {
         result[i] = str[i];
     }
     return result;
@@ -60,7 +60,7 @@ char **my_str_to_word_array(char const *str)
         return malloc(sizeof(char *));
     }
     array[word_count + 1] = NULL;
-    for (int i = 0 ; str[i] != '\0' ; i++) {
+    for (int i = 0; str[i] != '\0'; i++) {
         if (is_alphanum(str[i]) == 1 && !(is_alphanum(str[i - 1]) == 1)) {
             array[count] = get_word(&str[i]);
             count++;
@@ -68,7 +68,6 @@ char **my_str_to_word_array(char const *str)
     }
     return array;
 }
-
 
 /*int main()
 {

@@ -12,7 +12,7 @@ char *my_revstr(char *str)
     char holder;
     int len = my_strlen(str) - 1;
 
-    for (int i = 0 ; i < len / 2 ; i++) {
+    for (int i = 0; i < len / 2; i++) {
         holder = str[i];
         str[i] = str[len - i];
         str[len - i] = holder;

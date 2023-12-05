@@ -13,7 +13,7 @@ int my_find_prime_sup(int nb)
     if (my_is_prime(nb) == 1) {
         return nb;
     }
-    for (long i = 1 ; i > 0 ; i++) {
+    for (long i = 1; i > 0; i++) {
         if (nb + i == INT_MAX && my_is_prime(nb + 1) != 1) {
             return 0;
         }

@@ -11,7 +11,7 @@ static void itr_on_array(int *array, int size)
 {
     int holder;
 
-    for (int i = 0; i + 1 < size ; i++) {
+    for (int i = 0; i + 1 < size; i++) {
         if (array[i] > array[i + 1]) {
             holder = array[i];
             array[i] = array[i + 1];
@@ -25,7 +25,7 @@ void my_sort_int_array(int *array, int size)
     if (size < 1) {
         return;
     }
-    for (int n = 0; n < size ; n++) {
+    for (int n = 0; n < size; n++) {
         itr_on_array(array, size);
     }
 }

@@ -5,10 +5,10 @@
 ** task04
 */
 
-#include "string.h"
-#include "stdlib.h"
-#include "stdio.h"
 #include "my.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
 
 char *my_evil_str(char *str)
 {
@@ -16,7 +16,7 @@ char *my_evil_str(char *str)
     char holder;
     int inv_len;
 
-    for (int i = 0 ; i < len / 2 ; i++) {
+    for (int i = 0; i < len / 2; i++) {
         inv_len = len - i - 1;
         holder = str[inv_len];
         str[inv_len] = str[i];

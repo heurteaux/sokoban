@@ -11,8 +11,6 @@
 static const int COMMA_INT = 44;
 static const int SPACE_INT = 32;
 
-
-
 static void print_the_thing(int a, int b, int c)
 {
     int a_ascii = a + 48;
@@ -26,11 +24,11 @@ static void print_the_thing(int a, int b, int c)
 
 static void if_everything_different(int i, int n, int u)
 {
-    if ( u != n && u != i && i != n ) {
-        if ( !( u > n && n > i) ) {
+    if (u != n && u != i && i != n) {
+        if (!(u > n && n > i)) {
             return;
         }
-        if ( u == 9 && n == 8 && i == 7 ) {
+        if (u == 9 && n == 8 && i == 7) {
             print_the_thing(u, n, i);
             return;
         }
@@ -42,15 +40,15 @@ static void if_everything_different(int i, int n, int u)
 
 static void for_loop_naze(int i, int n)
 {
-    for (int u = 0 ; u < 10 ; u++) {
+    for (int u = 0; u < 10; u++) {
         if_everything_different(i, n, u);
     }
 }
 
 int my_print_comb(void)
 {
-    for (int i = 0 ; i < 10 ; i++) {
-        for (int n = 0 ; n < 10 ; n++) {
+    for (int i = 0; i < 10; i++) {
+        for (int n = 0; n < 10; n++) {
             for_loop_naze(i, n);
         }
     }

@@ -8,11 +8,11 @@
 #include <unistd.h>
 #include "my.h"
 
-//char const RTRN = '\n';
+// char const RTRN = '\n';
 
 char *my_strncpy(char *dest, char const *src, int n)
 {
-    for (int i = 0 ; i < n ; i++) {
+    for (int i = 0; i < n; i++) {
         if (dest[i + 1] == '\0') {
             dest[i] = src[i];
             dest[i + 1] = '\0';

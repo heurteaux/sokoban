@@ -6,9 +6,8 @@
 */
 
 #include <ncurses.h>
-#include "../../data_structs/map.h"
+#include "../memory_managment.h"
 #include "../map/init_map.h"
-#include "../../data_structs/position.h"
 #include "../map/map_infos/o_pos_arr.h"
 #include "../setup_ncurses.h"
 #include "game_status.h"
@@ -17,6 +16,7 @@
 
 void reset_game(map_t *map, char *map_path)
 {
+    free_map(*map);
     *map = init_map(map_path);
 }
 
@@ -35,5 +35,11 @@ void start_game(char **argv)
         clear();
         refresh();
     }
+    display_map(&map);
+    clear();
+    refresh();
     endwin();
+    free_map(map);
+    free_pos_arr(o_pos_arr);
 }
+//ncurses does not free some memory for optimization / operating system reasons

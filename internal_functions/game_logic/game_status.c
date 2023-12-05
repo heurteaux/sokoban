@@ -5,12 +5,13 @@
 ** game_status.c
 */
 
-#include <stdlib.h>
+#include <ncurses.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "../../data_structs/map.h"
 #include "../../data_structs/position.h"
+#include "../map/displaying/display_map.h"
 #include "box_status.h"
-#include <ncurses.h>
 
 bool is_win(char **map, position_t **o_pos_arr)
 {
@@ -28,6 +29,7 @@ void check_game_lost(map_t map)
         if (!is_on_line_stuck(map, y))
             return;
     }
+    display_map(&map);
     clear();
     refresh();
     endwin();

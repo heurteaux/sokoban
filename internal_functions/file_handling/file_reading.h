@@ -9,4 +9,4 @@
 
 char *get_file_content(const char *file_path);
 
-char **get_map(char const *file_content, int height, int width);
+char **get_map(char *file_content, int height, int width);

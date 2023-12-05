@@ -17,11 +17,11 @@ SRCS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	= -Werror -Wall -Wextra
+CFLAGS	= -Werror -Wall -Wextra -g3
 
 $(NAME):	$(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses -g3
 
 all: $(NAME)
 

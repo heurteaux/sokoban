@@ -28,8 +28,8 @@ char *get_file_content(const char *file_path)
     return buffer;
 }
 
-//clang-tidy warning here for no valid reason, wtf ?
-char **get_map(char const *file_content, int height, int width)
+//clang-tidy warning here for no valid reason
+char **get_map(char *file_content, int height, int width)
 {
     char **map = alloc_2d_arr(height, width);
     int row_index = 0;
@@ -44,5 +44,6 @@ char **get_map(char const *file_content, int height, int width)
         map[row][row_index] = file_content[i];
         row_index++;
     }
+    free(file_content);
     return map;
 }

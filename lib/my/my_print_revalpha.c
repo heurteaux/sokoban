@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** day03
 ** File description:
-** taksk01
+** task01
 */
 #include <unistd.h>
 #include "my.h"

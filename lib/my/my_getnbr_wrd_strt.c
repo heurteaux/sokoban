@@ -69,9 +69,3 @@ int my_getnbr_wrd_strt(char *str)
     }
     return 0;
 }
-
-/*void main() {
-    char test[] = "hfckjezc2147483648";
-    int digit = my_getnbr(test);
-    printf("%d\n", digit);
-}*/

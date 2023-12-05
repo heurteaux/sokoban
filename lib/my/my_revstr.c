@@ -19,12 +19,3 @@ char *my_revstr(char *str)
     }
     return str;
 }
-
-/*void main()
-{
-    char str[] = "ijzdijdiedijediejdijfjffn<xxxx";
-    printf("%s\n", str);
-    char *str_holder = my_revstr(str);
-    printf("%s\n", str);
-    printf("%s\n", str_holder);
-    }*/

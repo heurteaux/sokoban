@@ -41,7 +41,7 @@ int my_puterr_nbr(int nb_origin)
     }
     if (nb > 0) {
         for_positive_err(nb, arg_length, result_holder);
-    } else if (nb < 0) {
+    } else {
         write(2, "-", 1);
         for_negative_err(nb, arg_length, result_holder);
     }

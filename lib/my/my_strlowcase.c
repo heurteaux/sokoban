@@ -16,11 +16,3 @@ char *my_strlowcase(char *str)
     }
     return str;
 }
-
-/*void main()
-{
-    char to_uppercase[] = "AZè-(e-é_àç&_zaàçduaçdazàdç_éagsuà";
-    printf("%s\n", to_uppercase);
-    my_strlowcase(to_uppercase);
-    printf("%s\n", to_uppercase);
-    }*/

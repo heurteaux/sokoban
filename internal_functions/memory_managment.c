@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** my_sokoban
 ** File description:
-** memory_managment.c
+** memory_management.c
 */
 
 #include <malloc.h>

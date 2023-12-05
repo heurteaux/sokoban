@@ -63,4 +63,3 @@ all:	$(NAME)
 $(NAME):	$(OBJS)
 	ar rc $(NAME) $(OBJS)
 
-clean: rm $(OBJS)

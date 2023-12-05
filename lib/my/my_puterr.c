@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2023
-** myputerr
+** my_puterr
 ** File description:
 ** myputerr
 */

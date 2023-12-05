@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** my_sokoban
 ** File description:
-** memory_managment.h
+** memory_management.h
 */
 
 #pragma once

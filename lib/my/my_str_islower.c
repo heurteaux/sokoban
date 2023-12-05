@@ -28,8 +28,3 @@ int my_str_islower(char const *str)
     return 1;
 }
 
-/*int main(void)
-{
-    char const *string = "abcdefghijklmnoaqrstuvwxyz1234567890²&$$*";
-    printf("%d\n", my_str_islower(string));
-}*/

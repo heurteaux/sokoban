@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2023
 ** putchar
 ** File description:
-** outchar
+** putchar
 */
 
 #include <unistd.h>

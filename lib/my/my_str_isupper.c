@@ -29,9 +29,4 @@ int my_str_isupper(char const *str)
 }
 
 /*
-int main(void)
-{
-    char const *string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&'*ù$^p";
-    printf("%d\n", my_str_isupper(string));
-}
 */

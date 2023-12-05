@@ -42,13 +42,10 @@ int my_put_nbr_base(int nb_origin, char *base_str)
     }
     if (nb > 0) {
         for_positive_b(nb, arg_length, result_holder, base_str);
-    } else if (nb < 0) {
+    } else {
         write(1, "-", 1);
         for_negative_b(nb, arg_length, result_holder, base_str);
     }
     return 84;
 }
 
-/*void main(void) {
-    my_put_nbr_base(0, "0123456789ABCDEF");
-}*/

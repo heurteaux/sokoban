@@ -16,11 +16,3 @@ char *my_strupcase(char *str)
     }
     return str;
 }
-
-/*void main()
-{
-    char to_uppercase[] = "abcdefghijklmnopqrstuvwxyz";
-    printf("%s\n", to_uppercase);
-    my_strupcase(to_uppercase);
-    printf("%s\n", to_uppercase);
-    }*/

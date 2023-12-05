@@ -61,20 +61,10 @@ char **my_str_to_word_array(char const *str)
     }
     array[word_count + 1] = NULL;
     for (int i = 0; str[i] != '\0'; i++) {
-        if (is_alphanum(str[i]) == 1 && !(is_alphanum(str[i - 1]) == 1)) {
+        if (is_alphanum(str[i]) == 1 && is_alphanum(str[i - 1]) != 1) {
             array[count] = get_word(&str[i]);
             count++;
         }
     }
     return array;
 }
-
-/*int main()
-{
-    char *string = "azlka--&&oaksz*";
-    char **result = my_str_to_word_array(string);
-    for (int i = 0; result[i] != NULL ; i++) {
-        my_putstr(result[i]);
-        my_putstr("\n");
-    }
-    }*/

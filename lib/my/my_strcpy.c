@@ -4,7 +4,7 @@
 ** File description:
 ** task01
 */
-#include <unistd.h>
+
 #include "my.h"
 
 char *my_strcpy(char *dest, char const *src)

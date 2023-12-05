@@ -23,7 +23,7 @@ static int is_letter(char a)
     return 0;
 }
 
-char *my_strcapitalize(char *str)
+__attribute__((unused)) char *my_strcapitalize(char *str)
 {
     my_strlowcase(str);
     for (int i = 0; str[i] != '\0'; i++) {

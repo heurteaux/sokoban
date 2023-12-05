@@ -5,9 +5,7 @@
 ** task03
 */
 
-#include "my.h"
-
-char *my_strncat(char *dest, char const *src, int nb)
+__attribute__((unused)) char *my_strncat(char *dest, char const *src, int nb)
 {
     int i = 0;
     int n;

@@ -9,7 +9,7 @@
 #include "../../../data_structs/map.h"
 #include "../../../lib/my.h"
 
-void print_map(map_t map)
+__attribute__((unused)) void print_map(map_t map)
 {
     for (int i = 0; i < map.height; i++) {
         my_putstr(map.content[i]);

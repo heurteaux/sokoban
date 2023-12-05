@@ -5,10 +5,9 @@
 ** task05
 */
 
-#include <limits.h>
 #include "my.h"
 
-int my_compute_square_root(int nb)
+__attribute__((unused)) int my_compute_square_root(int nb)
 {
     if (nb == 1) {
         return 1;

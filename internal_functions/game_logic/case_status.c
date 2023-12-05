@@ -12,7 +12,7 @@ bool is_case_solid(char **map, int y, int x)
     return map[y][x] == '#';
 }
 
-bool is_case_transparent(char **map, int y, int x)
+__attribute__((unused)) bool is_case_transparent(char **map, int y, int x)
 {
     return map[y][x] == 'O';
 }

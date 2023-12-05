@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "my.h"
 
-char *my_strdup(char const *src)
+__attribute__((unused)) char *my_strdup(char const *src)
 {
     char *allocated_space = malloc(sizeof(char) * (my_strlen(src) + 1));
 

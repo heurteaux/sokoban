@@ -5,7 +5,7 @@
 ** my_str_isalpha.c
 */
 
-int my_str_isalpha(char const *str)
+__attribute__((unused)) int my_str_isalpha(char const *str)
 {
     if (str[0] == '\0') {
         return 0;

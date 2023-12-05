@@ -50,7 +50,7 @@ char *get_word(char const *str)
     return result;
 }
 
-char **my_str_to_word_array(char const *str)
+__attribute__((unused)) char **my_str_to_word_array(char const *str)
 {
     int word_count = count_words(str);
     char **array = malloc(sizeof(char *) * (word_count) + 10);

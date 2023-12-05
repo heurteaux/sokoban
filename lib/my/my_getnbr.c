@@ -7,7 +7,6 @@
 
 #include <limits.h>
 #include <stdbool.h>
-#include "my.h"
 
 static void check_minus(int min_cnt, long *number)
 {
@@ -50,7 +49,7 @@ static void chck_int(long *number)
     }
 }
 
-int my_getnbr(char *str)
+__attribute__((unused)) int my_getnbr(char *str)
 {
     long number;
     int min_cnt = 0;
@@ -60,7 +59,7 @@ int my_getnbr(char *str)
             number = on_num(i, str);
             check_minus(min_cnt, &number);
             chck_int(&number);
-            return number;
+            return (int)number;
         }
         if (str[i] == 45) {
             min_cnt++;

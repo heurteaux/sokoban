@@ -15,7 +15,6 @@ SRCS	=	my_compute_factorial_it.c    \
 		my_strlowcase.c    \
 		my_str_to_word_array.c    \
 		functions_lol.c    \
-		functions_lol_base.c	\
 		my_compute_factorial_rec.c    \
 		my_find_prime_sup.c    \
 		my_print_comb.c    \
@@ -36,17 +35,14 @@ SRCS	=	my_compute_factorial_it.c    \
 		my_sort_int_array.c    \
 		my_strdup.c    \
 		my_strncpy.c    \
-		temp_decla2.c    \
 		my_compute_square_root.c    \
 		my_is_prime.c    \
 		my_putchar.c    \
 		my_strcapitalize.c    \
 		my_strlen.c    \
 		my_strstr.c    \
-		temp_decla.c	\
 		my_puterr.c	\
 		my_getnbr_wrd_strt.c	\
-		my_put_nbr_base.c	\
 		my_str_isalpha.c	\
 		my_str_islower.c	\
 		my_str_isnum.c	\

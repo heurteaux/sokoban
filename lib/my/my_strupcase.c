@@ -5,9 +5,7 @@
 ** task08
 */
 
-#include "my.h"
-
-char *my_strupcase(char *str)
+__attribute__((unused)) char *my_strupcase(char *str)
 {
     for (int i = 0; str[i] != '\0'; i++) {
         if (str[i] > 96 && str[i] < 123) {

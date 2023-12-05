@@ -5,8 +5,6 @@
 ** task06
 */
 
-#include "my.h"
-
 static void itr_on_array(int *array, int size)
 {
     int holder;
@@ -20,7 +18,7 @@ static void itr_on_array(int *array, int size)
     }
 }
 
-void my_sort_int_array(int *array, int size)
+__attribute__((unused)) void my_sort_int_array(int *array, int size)
 {
     if (size < 1) {
         return;

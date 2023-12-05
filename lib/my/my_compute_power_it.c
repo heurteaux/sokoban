@@ -8,7 +8,7 @@
 #include <limits.h>
 #include "my.h"
 
-int my_compute_power_it(int nb, int p)
+__attribute__((unused)) int my_compute_power_it(int nb, int p)
 {
     int result = 1;
 

@@ -5,7 +5,7 @@
 ** my_str_isprintable.c
 */
 
-int my_str_isprintable(char const *str)
+__attribute__((unused)) int my_str_isprintable(char const *str)
 {
     if (str[0] == '\0')
         return 1;

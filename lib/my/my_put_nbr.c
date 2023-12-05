@@ -29,7 +29,7 @@ static int int_length(int a)
     return counter;
 }
 
-int my_put_nbr(int nb_origin)
+__attribute__((unused)) int my_put_nbr(int nb_origin)
 {
     int arg_length = int_length(nb_origin);
     long result_holder = 0;
@@ -40,7 +40,7 @@ int my_put_nbr(int nb_origin)
         return 0;
     }
     if (nb > 0) {
-        for_positive(nb, arg_length, result_holder);
+        for_positive((int)nb, arg_length, result_holder);
     } else {
         write(1, "-", 1);
         for_negative(nb, arg_length, result_holder);

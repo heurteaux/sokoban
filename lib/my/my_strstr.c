@@ -6,9 +6,8 @@
 */
 
 #include <stddef.h>
-#include "my.h"
 
-char *my_strstr(char *s1, char *s2)
+__attribute__((unused)) char *my_strstr(char *s1, char *s2)
 {
     char *h;
     char *n;

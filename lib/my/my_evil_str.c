@@ -6,11 +6,8 @@
 */
 
 #include "my.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
 
-char *my_evil_str(char *str)
+__attribute__((unused)) char *my_evil_str(char *str)
 {
     int len = my_strlen(str);
     char holder;

@@ -6,7 +6,6 @@
 */
 
 #include <unistd.h>
-#include "my.h"
 
 static const int COMMA_INT = 44;
 static const int SPACE_INT = 32;
@@ -45,7 +44,7 @@ static void for_loop_naze(int i, int n)
     }
 }
 
-int my_print_comb(void)
+__attribute__((unused)) int my_print_comb(void)
 {
     for (int i = 0; i < 10; i++) {
         for (int n = 0; n < 10; n++) {

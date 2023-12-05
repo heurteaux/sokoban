@@ -13,7 +13,7 @@ static int is_letter(char a)
     return 0;
 }
 
-int my_str_isupper(char const *str)
+__attribute__((unused)) int my_str_isupper(char const *str)
 {
     if (str[0] == '\0')
         return 0;

@@ -10,6 +10,6 @@
 
 bool is_case_solid(char **map, int y, int x);
 
-bool is_case_transparent(char **map, int y, int x);
+__attribute__((unused)) bool is_case_transparent(char **map, int y, int x);
 
 bool is_case_box(char **map, int y, int x);

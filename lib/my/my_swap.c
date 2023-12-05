@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-void my_swap(int *a, int *b)
+__attribute__((unused)) void my_swap(int *a, int *b)
 {
     int holder;
 

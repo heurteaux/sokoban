@@ -10,22 +10,19 @@
 static void check_map_chars(const char *raw_map_content)
 {
     for (int i = 0; raw_map_content[i] != '\0'; i++) {
-        switch (raw_map_content[i]) {
-            case ' ':
-                break;
-            case '#':
-                break;
-            case 'O':
-                break;
-            case 'P':
-                break;
-            case 'X':
-                break;
-            case '\n':
-                break;
-            default:
-                exit(84);
-        }
+        if (raw_map_content[i] == ' ')
+            continue;
+        if (raw_map_content[i] == '#')
+            continue;
+        if (raw_map_content[i] == 'O')
+            continue;
+        if (raw_map_content[i] == 'P')
+            continue;
+        if (raw_map_content[i] == 'X')
+            continue;
+        if (raw_map_content[i] == '\n')
+            continue;
+        exit(84);
     }
 }
 

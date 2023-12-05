@@ -9,27 +9,27 @@
 
 void my_putchar(char c);
 
-void my_swap(int *a, int *b);
+__attribute__((unused)) void my_swap(int *a, int *b);
 
 int my_putstr(char const *str);
 
 int my_strlen(char const *str);
 
-int my_compute_factorial_it(int nb);
+__attribute__((unused)) int my_compute_factorial_it(int nb);
 
 int my_compute_factorial_rec(int nb);
 
-int my_compute_power_it(int nb, int power);
+__attribute__((unused)) int my_compute_power_it(int nb, int power);
 
-char *my_evil_str(char *str);
+__attribute__((unused)) char *my_evil_str(char *str);
 
 int my_compute_power_rec(int nb, int power);
 
-int my_compute_square_root(int nb);
+__attribute__((unused)) int my_compute_square_root(int nb);
 
 int my_is_prime(int nb);
 
-int my_find_prime_sup(int nb);
+__attribute__((unused)) int my_find_prime_sup(int nb);
 
 char *my_strcpy(char *dest, char const *src);
 
@@ -40,15 +40,7 @@ char *my_strlowcase(char *str);
 void for_positive(int a, int b, long c);
 
 void for_negative(long a, int b, long c);
-
-
-void for_positive_b(
-    long nb, int arg_length, long result_holder, char *base_str);
-
-void for_negative_b(
-    long nb, int arg_length, long result_holder, char *base_str);
-
-int my_put_nbr_base(int nb, char *base_str);
+__attribute__((unused)) int my_put_nbr_base(int nb, char *base_str);
 
 int is_alphanum(char a);
 

@@ -7,7 +7,7 @@
 
 #include "my.h"
 
-char *my_revstr(char *str)
+__attribute__((unused)) char *my_revstr(char *str)
 {
     char holder;
     int len = my_strlen(str) - 1;

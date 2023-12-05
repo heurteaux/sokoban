@@ -83,13 +83,11 @@ void start_sokoban(char **argv)
 
     setup_term();
     while (key != 27 && !is_win(map.content, o_pos_arr)) {
+        clear();
         display_map(&map);
         key = getch();
         handle_controls(&map, key, o_pos_arr, argv[1]);
-        if (!is_win(map.content, o_pos_arr)) {
-            refresh();
-            clear();
-        }
+        refresh();
     }
     endwin();
 }

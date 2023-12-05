@@ -5,12 +5,10 @@
 ** help_menu.c
 */
 
-#include <fcntl.h>
-#include <unistd.h>
-#include "includes/my.h"
-#include "includes/file_reading.h"
 #include <malloc.h>
 #include <stdbool.h>
+#include "../lib/my.h"
+#include "file_handling/file_reading.h"
 
 const char *HELP_MENU_TEXT_FILE_PATH = "./config_files/help_menu_text";
 

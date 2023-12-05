@@ -2,11 +2,9 @@
 ** EPITECH PROJECT, 2023
 ** my_sokoban
 ** File description:
-** map_infos.h
+** map_format.h
 */
 
 #pragma once
 
-int get_map_width(char *map);
-
-int get_map_height(char *map);
+void check_map_format(char *raw_map_content);

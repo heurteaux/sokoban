@@ -11,3 +11,5 @@ typedef struct player_pos_s {
     int y;
     int x;
 } player_pos_t;
+
+player_pos_t get_player_pos(char **map);

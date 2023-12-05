@@ -5,7 +5,7 @@
 ** get_map_infos.c
 */
 
-int get_map_width(char *map)
+int get_map_width(char const *map)
 {
     int width = 0;
     int current_line_len = 0;
@@ -20,7 +20,7 @@ int get_map_width(char *map)
     return width;
 }
 
-int get_map_height(char *map)
+int get_map_height(char const *map)
 {
     int height = 0;
 

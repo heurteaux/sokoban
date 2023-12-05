@@ -5,7 +5,8 @@
 ** main.c
 */
 
-#include "includes/internal_functions.h"
+#include "internal_functions/game_logic/game.h"
+#include "internal_functions/help_menu.h"
 
 int main(int argc, char **argv)
 {
@@ -13,6 +14,6 @@ int main(int argc, char **argv)
         return 84;
     if (is_help_menu_requested(argc, argv))
         return help_menu(argc, argv);
-    start_sokoban(argv);
+    start_game(argv);
     return 0;
 }

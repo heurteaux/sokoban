@@ -5,7 +5,7 @@
 ** player_pos.c
 */
 
-#include "../../includes/player_pos.h"
+#include "player_pos.h"
 #include <stddef.h>
 #include <stdlib.h>
 

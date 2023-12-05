@@ -7,7 +7,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../../includes/position.h"
+#include "../../../data_structs/position.h"
+#include "../../memory_managment.h"
 
 static void get_nb_pos_inner_cond(char **map, int y, int x, int *count)
 {
@@ -26,14 +27,6 @@ static int get_nb_pos(char **map)
         }
     }
     return count;
-}
-
-position_t **alloc_pos_arr(int size)
-{
-    position_t **pos_arr = malloc(sizeof(position_t *) * (size + 1));
-
-    pos_arr[size] = NULL;
-    return pos_arr;
 }
 
 static void get_o_pos_on_row(

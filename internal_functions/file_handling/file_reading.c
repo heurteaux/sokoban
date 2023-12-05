@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "../memory_managment.h"
 
 char *get_file_content(const char *file_path)
 {
@@ -25,4 +26,22 @@ char *get_file_content(const char *file_path)
     }
     read(fd, buffer, file_infos.st_size);
     return buffer;
+}
+
+char **get_map(char const *file_content, int height, int width)
+{
+    char **map = alloc_2d_arr(height, width);
+    int row_index = 0;
+    int row = 0;
+
+    for (int i = 0; file_content[i] != '\0'; i++) {
+        if (file_content[i] == '\n') {
+            row++;
+            row_index = 0;
+            continue;
+        }
+        map[row][row_index] = file_content[i];
+        row_index++;
+    }
+    return map;
 }

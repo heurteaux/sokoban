@@ -19,12 +19,6 @@ OBJS	=	$(SRCS:.c=.o)
 
 CFLAGS	= -Werror -Wall -Wextra
 
-##TEST_NAME	=	unit_tests
-
-##SRC_TEST	=	tests/test_my_printf.c
-
-##TESTFLAGS	=	-lcriterion --coverage -g3
-
 $(NAME):	$(OBJS)
 	make -C lib/my/
 	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses

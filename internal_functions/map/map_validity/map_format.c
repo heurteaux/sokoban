@@ -7,7 +7,7 @@
 
 #include <stdlib.h>
 
-static void check_map_chars(char *raw_map_content)
+static void check_map_chars(const char *raw_map_content)
 {
     for (int i = 0; raw_map_content[i] != '\0'; i++) {
         switch (raw_map_content[i]) {
@@ -29,7 +29,7 @@ static void check_map_chars(char *raw_map_content)
     }
 }
 
-static void check_player_number(char *raw_map_content)
+static void check_player_number(const char *raw_map_content)
 {
     int player_nb = 0;
 
@@ -41,7 +41,7 @@ static void check_player_number(char *raw_map_content)
     }
 }
 
-static int check_base_number(char *raw_map_content)
+static int check_base_number(const char *raw_map_content)
 {
     int base_nb = 0;
 
@@ -54,7 +54,7 @@ static int check_base_number(char *raw_map_content)
     return base_nb;
 }
 
-static int check_box_number(char *raw_map_content)
+static int check_box_number(const char *raw_map_content)
 {
     int box_nb = 0;
 

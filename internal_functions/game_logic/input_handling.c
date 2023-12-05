@@ -6,8 +6,11 @@
 */
 
 #include <ncurses.h>
-#include "../../includes/internal_functions.h"
-#include "../../includes/player_pos.h"
+#include "../../data_structs/position.h"
+#include "../../data_structs/map.h"
+#include "player_pos.h"
+#include "case_status.h"
+#include "game.h"
 
 static bool is_base_on_pos(int y, int x, position_t **O_pos_arr)
 {
@@ -43,7 +46,7 @@ static bool is_box_move_x(char **map, int distance)
             player_pos.x + (distance + (distance < 0 ? -1 : 1))));
 }
 
-void mv_player_y(char **map, int distance, position_t **O_pos_arr)
+static void mv_player_y(char **map, int distance, position_t **O_pos_arr)
 {
     player_pos_t player_pos = get_player_pos(map);
     int offset;
@@ -64,7 +67,7 @@ void mv_player_y(char **map, int distance, position_t **O_pos_arr)
     }
 }
 
-void mv_player_x(char **map, int distance, position_t **O_pos_arr)
+static void mv_player_x(char **map, int distance, position_t **O_pos_arr)
 {
     player_pos_t player_pos = get_player_pos(map);
     int offset;
@@ -82,11 +85,6 @@ void mv_player_x(char **map, int distance, position_t **O_pos_arr)
             map[player_pos.y][player_pos.x] = 'O';
         map[player_pos.y][player_pos.x + distance] = 'P';
     }
-}
-
-void reset_game(map_t *map, char *map_path)
-{
-    *map = init_map(map_path);
 }
 
 void handle_controls(

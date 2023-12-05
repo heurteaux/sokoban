@@ -86,9 +86,10 @@ void start_sokoban(char **argv)
         display_map(&map);
         key = getch();
         handle_controls(&map, key, o_pos_arr, argv[1]);
-        refresh();
-        if (!is_win(map.content, o_pos_arr))
+        if (!is_win(map.content, o_pos_arr)) {
+            refresh();
             clear();
+        }
     }
     endwin();
 }

@@ -40,3 +40,5 @@ void print_map(map_t map);
 void check_map_format(char *raw_map_content);
 
 map_t init_map(char *map_path);
+
+void check_game_lost(map_t map);

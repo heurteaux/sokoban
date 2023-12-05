@@ -29,10 +29,11 @@ void for_positive(int a, int b, long c);
 
 void for_negative(long a, int b, long c);
 
-void for_positive_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_positive_b(
+    long nb, int arg_length, long result_holder, char *base_str);
 
-void
-for_negative_b(long nb, int arg_length, long result_holder, char *base_str);
+void for_negative_b(
+    long nb, int arg_length, long result_holder, char *base_str);
 
 int is_alphanum(char a);
 

@@ -48,4 +48,3 @@ int my_put_nbr_base(int nb_origin, char *base_str)
     }
     return 84;
 }
-

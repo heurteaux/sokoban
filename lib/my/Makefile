@@ -62,4 +62,3 @@ all:	$(NAME)
 
 $(NAME):	$(OBJS)
 	ar rc $(NAME) $(OBJS)
-

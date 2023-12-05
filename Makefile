@@ -17,7 +17,7 @@ SRCS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	= -Wall -Wextra -g3
+CFLAGS	= -Werror -Wall -Wextra
 
 ##TEST_NAME	=	unit_tests
 
@@ -27,7 +27,7 @@ CFLAGS	= -Wall -Wextra -g3
 
 $(NAME):	$(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -g3 -lncurses
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses
 
 all: $(NAME)
 
@@ -40,5 +40,5 @@ re: fclean all
 
 dev_test: $(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -g3 -lncurses
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses
 	make clean

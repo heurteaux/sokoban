@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "../../includes/position.h"
+#include "../../includes/map.h"
 
 bool is_win(char **map, position_t **o_pos_arr)
 {

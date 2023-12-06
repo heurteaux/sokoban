@@ -28,8 +28,11 @@ char *my_strlowcase(char *str);
 void for_positive(int a, int b, long c);
 
 void for_negative(long a, int b, long c);
+
 int is_alphanum(char a);
 
 void for_positive_err(int nb, int arg_length, long result_holder);
 
 void for_negative_err(long nb, int arg_length, long result_holder);
+
+void my_puterr(char *str);

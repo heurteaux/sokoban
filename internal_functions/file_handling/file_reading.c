@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <unistd.h>
 #include "../memory_managment.h"
+#include "../error_messages/map_reading_errors.h"
 
 char *get_file_content(const char *file_path)
 {
@@ -18,17 +19,17 @@ char *get_file_content(const char *file_path)
     struct stat file_infos;
 
     if (fd == (-1))
-        exit(84);
+        err_cannot_open_file();
     stat(file_path, &file_infos);
     buffer = malloc(sizeof(char) * (file_infos.st_size + 1));
     for (int i = 0; i < (file_infos.st_size + 1); i++) {
         buffer[i] = 0;
     }
     read(fd, buffer, file_infos.st_size);
+    close(fd);
     return buffer;
 }
 
-//clang-tidy warning here for no valid reason
 char **get_map(char *file_content, int height, int width)
 {
     char **map = alloc_2d_arr(height, width);

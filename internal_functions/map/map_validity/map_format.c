@@ -6,6 +6,8 @@
 */
 
 #include <stdlib.h>
+#include "../../error_messages/map_reading_errors.h"
+#include "../../error_messages/map_gameplay_errors.h"
 
 static void check_map_chars(const char *raw_map_content)
 {
@@ -22,7 +24,7 @@ static void check_map_chars(const char *raw_map_content)
             continue;
         if (raw_map_content[i] == '\n')
             continue;
-        exit(84);
+        err_invalid_map_character();
     }
 }
 
@@ -34,8 +36,10 @@ static void check_player_number(const char *raw_map_content)
         if (raw_map_content[i] == 'P')
             player_nb++;
         if (player_nb > 1)
-            exit(84);
+            err_invalid_player_number();
     }
+    if (player_nb < 1)
+        err_invalid_player_number();
 }
 
 static int check_base_number(const char *raw_map_content)
@@ -47,7 +51,7 @@ static int check_base_number(const char *raw_map_content)
             base_nb++;
     }
     if (base_nb == 0)
-        exit(84);
+        err_invalid_base_number();
     return base_nb;
 }
 
@@ -61,7 +65,7 @@ static int check_box_number(const char *raw_map_content)
         }
     }
     if (box_nb == 0)
-        exit(84);
+        err_invalid_box_number();
     return box_nb;
 }
 
@@ -71,7 +75,7 @@ static void check_box_and_base_number(char *raw_map_content)
     int box_nb = check_box_number(raw_map_content);
 
     if (base_nb != box_nb) {
-        exit(84);
+        err_box_base_nb_match();
     }
 }
 

@@ -11,6 +11,7 @@
 #include "../../data_structs/map.h"
 #include "../../data_structs/position.h"
 #include "../map/displaying/display_map.h"
+#include "../../lib/my.h"
 #include "box_status.h"
 
 bool is_win(char **map, position_t **o_pos_arr)
@@ -32,5 +33,6 @@ void check_game_lost(map_t map)
     display_map(&map);
     refresh();
     endwin();
+    my_putstr("my_sokoban: You stuck all boxes, game lost !");
     exit(1);
 }

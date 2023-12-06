@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include "my.h"
 
-void my_puterr(char *str)
+__attribute__((unused)) void my_puterr(char *str)
 {
     write(2, str, my_strlen(str));
 }

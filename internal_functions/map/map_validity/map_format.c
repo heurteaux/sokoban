@@ -5,7 +5,6 @@
 ** map_format.c
 */
 
-#include <stdlib.h>
 #include "../../error_messages/map_reading_errors.h"
 #include "../../error_messages/map_gameplay_errors.h"
 

@@ -33,6 +33,5 @@ void check_game_lost(map_t map)
     display_map(&map);
     refresh();
     endwin();
-    my_putstr("my_sokoban: You stuck all boxes, game lost !");
     exit(1);
 }

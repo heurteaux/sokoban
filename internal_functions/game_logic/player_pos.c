@@ -10,20 +10,20 @@
 #include <stddef.h>
 
 
-static int is_player_line(char **map, int y)
+static int is_player_line(map_t *map, int y)
 {
-    for (int x = 0; map[y][x] != '\0'; x++) {
-        if (map[y][x] == 'P')
+    for (int x = 0; x < map->width; x++) {
+        if (map->content[y][x] == 'P')
             return x;
     }
     return (-1);
 }
 
-player_pos_t get_player_pos(char **map)
+player_pos_t get_player_pos(map_t *map)
 {
     player_pos_t disappear_warning = {};
 
-    for (int y = 0; map[y] != NULL; y++) {
+    for (int y = 0; map->content[y] != NULL; y++) {
         if (is_player_line(map, y) != (-1))
             return (player_pos_t){y, is_player_line(map, y)};
     }

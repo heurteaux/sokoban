@@ -36,7 +36,6 @@ void start_game(char **argv)
         refresh();
     }
     display_map(&map);
-    clear();
     refresh();
     endwin();
     free_map(map);

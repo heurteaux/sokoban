@@ -30,7 +30,6 @@ void check_game_lost(map_t map)
             return;
     }
     display_map(&map);
-    clear();
     refresh();
     endwin();
     exit(1);

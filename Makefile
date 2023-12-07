@@ -13,22 +13,29 @@ LIB			=	my_printf
 
 SRCS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 			-not -name "main.c"	\
-			-not -path "./libmy/*")
+			-not -path "./tests/*")
+
+SRCS_TESTS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
+			-not -name "main.c"	\
+			-not -path "./lib/*"	\
+			-not -path "./tests/*")
 
 OBJS	=	$(SRCS:.c=.o)
 
-CFLAGS	= -Werror -Wall -Wextra -g3
+CFLAGS	= -Werror -Wall -Wextra
 
 $(NAME):	$(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses -g3
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses
 
 all: $(NAME)
 
 clean:
 	rm -f $(OBJS)
+
 fclean: clean
 	rm -f $(NAME) $(TEST_NAME)
+	rm -f ./criterion_tests_bin
 
 re: fclean all
 
@@ -36,3 +43,10 @@ dev_test: $(OBJS)
 	make -C lib/my/
 	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses
 	make clean
+
+tests_run:
+	echo $(SRCS_TESTS)
+	make -C lib/my/
+	gcc -o criterion_tests_bin $(SRCS_TESTS) ./tests/*.c -Llib/my -lmy -lncurses -lcriterion --coverage
+	make clean
+	./criterion_tests_bin

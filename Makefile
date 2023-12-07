@@ -47,6 +47,7 @@ dev_test: $(OBJS)
 tests_run:
 	echo $(SRCS_TESTS)
 	make -C lib/my/
-	gcc -o criterion_tests_bin $(SRCS_TESTS) ./tests/*.c -Llib/my -lmy -lncurses -lcriterion --coverage
+	gcc -o criterion_tests_bin $(SRCS_TESTS) ./tests/*.c -Llib/my \
+-lmy -lncurses -lcriterion --coverage
 	make clean
 	./criterion_tests_bin

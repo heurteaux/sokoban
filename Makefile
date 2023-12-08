@@ -13,12 +13,14 @@ LIB			=	my_printf
 
 SRCS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 			-not -name "main.c"	\
-			-not -path "./tests/*")
+			-not -path "./tests/*"	\
+			-not -path "./bonus/*")
 
 SRCS_TESTS	:=	$(shell find $(SRC_DIRS) -name "*.c" \
 			-not -name "main.c"	\
 			-not -path "./lib/*"	\
-			-not -path "./tests/*")
+			-not -path "./tests/*"	\
+			-not -path "./bonus/*")
 
 OBJS	=	$(SRCS:.c=.o)
 

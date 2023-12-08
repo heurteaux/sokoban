@@ -26,7 +26,7 @@ CFLAGS	= -Werror -Wall -Wextra
 
 $(NAME):	$(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses -lcsfml-audio
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncursesw -lcsfml-audio
 
 all: $(NAME)
 
@@ -41,7 +41,8 @@ re: fclean all
 
 dev_test: $(OBJS)
 	make -C lib/my/
-	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses -lcsfml-audio
+	gcc -o $(NAME) main.c $(OBJS) ./lib/my/libmy.a -lncurses \
+-lcsfml-audio -lncursesw
 	make clean
 
 tests_run:

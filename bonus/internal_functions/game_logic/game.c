@@ -5,15 +5,15 @@
 ** sokoban.c
 */
 
-#include <ncurses.h>
 #include <SFML/Audio.h>
-#include "../memory_managment.h"
+#include <ncurses.h>
+#include "../game_logic/input_handling.h"
+#include "../map/displaying/display_map.h"
 #include "../map/init_map.h"
 #include "../map/map_infos/o_pos_arr.h"
+#include "../memory_managment.h"
 #include "../setup_ncurses.h"
 #include "game_status.h"
-#include "../map/displaying/display_map.h"
-#include "../game_logic/input_handling.h"
 
 void reset_game(map_t *map, char *map_path)
 {
@@ -21,9 +21,11 @@ void reset_game(map_t *map, char *map_path)
     *map = init_map(map_path);
 }
 
-sfMusic *start_music()
+sfMusic *start_music(void)
 {
-    sfMusic *main_theme = sfMusic_createFromFile("./config_files/doom_music.ogg");
+    sfMusic *main_theme =
+        sfMusic_createFromFile("./config_files/doom_music.ogg");
+
     sfMusic_setLoop(main_theme, sfTrue);
     sfMusic_play(main_theme);
     return main_theme;
@@ -52,4 +54,5 @@ void start_game(char **argv)
     free_map(map);
     free_pos_arr(o_pos_arr);
 }
-//ncurses does not free some memory for optimization / operating system reasons
+// ncurses does not free some memory for optimization / operating system
+// reasons
